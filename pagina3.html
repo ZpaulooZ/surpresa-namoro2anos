@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="MAIS UM POUQUINHO" content="MAIS UM POUQUINHO">
+    <title>MAIS UM POUQUINHO</title>
+    <link rel="stylesheet" href="css/style3.css">
+</head>
+<body>
+
+    <section class="frases">
+        <p class="linha">Você mudou minha vida</p>
+        <p class="linha">Me fez mais feliz</p>
+        <p class="linha">E eu quero você pra sempre </p>
+        <p class="linha">E se eu pudesse voltar no tempo  
+eu escolheria vc tudo de novo </p>
+    </section>
+
+    <section class="presente">
+        <button class="btn" onclick="abrirCarta()">Abrir </button>
+    </section>
+
+    <!-- CARTA 1 -->
+    <div id="carta" class="carta">
+        <div class="conteudo-carta">
+            <h2>Para você</h2>
+            <p>
+                Hoje faz 2 anos que eu tenho a melhor pessoa do meu lado.
+                E eu só quero continuar escrevendo essa história com você 
+                
+            </p>
+
+            <button class="btn-fechar" onclick="abrirCarta2()">Continuar </button>
+        </div>
+    </div>
+
+    <!-- CARTA 2 -->
+    <div id="carta2" class="carta">
+        <div class="conteudo-carta">
+            <h2>Agora vem o melhor...</h2>
+            <p>
+                Vc aceita renovar nosso contrato de namoro por mais 365 dias?
+            </p>
+
+            <div class="botoes">
+                <button class="btn" onclick="abrirCarta3()">Óbvio</button>
+                <button class="btn" onclick="abrirCarta3()">Sim</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CARTA 3 -->
+    <div id="carta3" class="carta">
+        <div class="conteudo-carta">
+            <h2>📄 CONTRATO RENOVADO COM SUCESSO 📄</h2>
+            <p>
+                REGRA 1: Amor diário obrigatório <br>
+                REGRA 2: Abraços ilimitados <br>
+                REGRA 3: Beijos sem moderação <br>
+                REGRA 4: Risadas garantidas <br><br>
+
+                Sem opção de cancelamento <br>
+                Sem possibilidade de devolução <br><br>
+
+                Duração: mais 365 dias<br>
+                renováveis automaticamente até a gente envelhecer junto <br><br>
+
+                Porque depois de tudo…<br>
+                eu só tenho certeza de uma coisa<br><br>
+
+                eu escolheria você todos os dias <br><br>
+
+                Que venham mais 365 dias ao seu lado e depois mais 365 e mais até a gente perder a conta
+            </p>
+        </div>
+    </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const linhas = document.querySelectorAll('.linha');
+
+    linhas.forEach((linha, index) => {
+        linha.style.opacity = 0;
+        linha.style.transform = "translateY(30px)";
+
+        setTimeout(() => {
+            linha.style.opacity = 1;
+            linha.style.transform = "translateY(0)";
+        }, 500 + (index * 1500));
+    });
+});
+</script>
+    <script>
+function abrirCarta() {
+    fecharTodas();
+    ativar("carta");
+}
+
+function abrirCarta2() {
+    fecharTodas();
+    ativar("carta2");
+}
+
+function abrirCarta3() {
+    fecharTodas();
+    ativar("carta3");
+    iniciarEfeito(); // 💖 ativa corações
+}
+
+function ativar(id) {
+    const el = document.getElementById(id);
+    el.style.display = "flex";
+
+    setTimeout(() => {
+        el.classList.add("ativa");
+    }, 10);
+}
+
+function fecharTodas() {
+    ["carta", "carta2", "carta3"].forEach(id => {
+        const el = document.getElementById(id);
+        el.classList.remove("ativa");
+        el.style.display = "none";
+    });
+}
+</script>
+<script>
+function iniciarEfeito() {
+    const emojis = ["❤️", "💖", "🌹", "🌸"];
+
+    setInterval(() => {
+        const el = document.createElement("div");
+        el.classList.add("efeito");
+
+        el.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+
+        el.style.left = Math.random() * 100 + "vw";
+        el.style.animationDuration = (3 + Math.random() * 2) + "s";
+
+        document.body.appendChild(el);
+
+        setTimeout(() => {
+            el.remove();
+        }, 5000);
+
+    }, 300);
+}
+</script>
+</body>
+</html>

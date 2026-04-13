@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{background-color: #FFF7F9;
+    color: #5A5A5A;
+    font-family: "cabin", sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+header{padding: 2rem;
+     text-align: center;
+}
+h1{color: #7A112E;
+     font-family: "Dancing Script", cursive;
+     font-size: 48px;
+
+}
+
+h2{color: #E5989B;
+
+}
+img {
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+     width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+@media (max-width: 600px) {
+    .foto img {
+        width: 100%;
+    }
+
+    .momentos img {
+        width: 100%;
+        height: auto;
+    }
+}
+.video {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.video video {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    margin-top: 10px;
+}
+
+.erro {
+    display: none;
+    color: red;
+}
+
+#overlay {
+    position: fixed;
+    inset: 0;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    background: rgba(0, 0, 0, 0.35);
+
+    display: none;
+    z-index: 999;
+
+    animation: fadeIn 0.4s ease;
+}
+
+.carta {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+
+    background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+    padding: 35px;
+    border-radius: 20px;
+
+    width: 90%;
+    max-width: 550px;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+
+    display: none;
+    z-index: 1000;
+
+    animation: abrirCarta 0.5s ease forwards;
+}
+
+@keyframes abrirCarta {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+#overlay {
+    position: fixed;
+    inset: 0;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    background: rgba(0, 0, 0, 0.7);
+
+    display: none;
+    z-index: 999;
+
+    animation: fadeIn 0.4s ease;
+}
+
+.carta {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+
+    background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+    padding: 35px;
+    border-radius: 20px;
+
+    width: 90%;
+    max-width: 550px;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+
+    display: none;
+    z-index: 1000;
+
+    animation: abrirCarta 0.5s ease forwards;
+}
+
+@keyframes abrirCarta {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.coracao {
+    position: fixed;
+    bottom: -30px;
+    pointer-events: none;
+    z-index: 9999;
+
+    animation: subir linear forwards,
+               girar linear infinite;
+}
+
+@keyframes subir {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+@keyframes girar {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 360deg;
+    }
+}
